@@ -14579,37 +14579,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<table>
-<thead><tr>
-<th>$\alpha,\beta$ setting</th>
-<th style="text-align:center">Reward</th>
-<th style="text-align:center">Regret</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
-<td style="text-align:center">3491.235</td>
-<td style="text-align:center">43.403</td>
-</tr>
-<tr>
-<td>$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
-<td style="text-align:center">3489.97</td>
-<td style="text-align:center">28.221</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Project:-Performance-Evaluation-of-Bandit-Algorithms">Project: Performance Evaluation of Bandit Algorithms<a class="anchor-link" href="#Project:-Performance-Evaluation-of-Bandit-Algorithms">&#182;</a></h1><ul>
 <li>In this project, you will implement several classical bandit algorithms, evluate their performance via numerical comparison and finally gain inspiring intuition.</li>
 </ul>
@@ -14798,7 +14767,7 @@ $$=N \cdot \theta_{I^*} = 5000 \times 0.7 = 3500$$</p>
 <li>UCB with $c \in \{1,5,10\}$.</li>
 <li>TS with<ul>
 <li>$\left\{(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)\right\}$ </li>
-<li>$\left\{(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)\right\}$</li>
+<li>$\left\{(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(a3,b3)=(2,3)\right\}$</li>
 </ul>
 </li>
 </ul>
@@ -15960,7 +15929,7 @@ jp-needs-light-background
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha = [1, 1, 1]     beta = [1, 1, 1]      reward = &quot;</span><span class="p">,</span> <span class="n">rewards</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot; regret = &quot;</span><span class="p">,</span> <span class="n">regrets</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha = [601, 401, 2] beta = [401, 601, 3]  reward = &quot;</span><span class="p">,</span> <span class="n">rewards</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot; regret = &quot;</span><span class="p">,</span> <span class="n">regrets</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$&quot;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$&quot;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$(a1,b1)=(1,1),(\alpha_2,\beta_2)=(1,1),(a3,b3)=(1,1)$&quot;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$(a1,b1)=(601,401),(\alpha_2,\beta_2)=(401,601),(a3,b3)=(2,3)$&quot;</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">rewards</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">regrets</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
@@ -16108,7 +16077,7 @@ jp-needs-light-background
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha = [1001, 505, 1] beta = [1, 505, 1001]    reward = &quot;</span><span class="p">,</span> <span class="n">rewards</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot; regret = &quot;</span><span class="p">,</span> <span class="n">regrets</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;alpha = [801, 201, 201] beta = [201, 801, 501]  reward = &quot;</span><span class="p">,</span> <span class="n">rewards</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot; regret = &quot;</span><span class="p">,</span> <span class="n">regrets</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$(\alpha_1,\beta_1)=(1001,1),(\alpha_2,\beta_2)=(505,505),(\alpha_3,\beta_3)=(1,1001)$&quot;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$(\alpha_1,\beta_1)=(801,201),(\alpha_2,\beta_2)=(201,801),(\alpha_3,\beta_3)=(201,501)$&quot;</span><span class="p">]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$(a1,b1)=(1001,1),(\alpha_2,\beta_2)=(505,505),(a3,b3)=(1,1001)$&quot;</span><span class="p">,</span><span class="sa">r</span><span class="s2">&quot;$(\alpha_1,\beta_1)=(801,201),(\alpha_2,\beta_2)=(201,801),(a3,b3)=(201,501)$&quot;</span><span class="p">]</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">rewards</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">regrets</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
@@ -16370,12 +16339,12 @@ jp-needs-light-background
 </thead>
 <tbody>
 <tr>
-<td>$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
+<td>(a1,b1)=(1,1),(a2,b2)=(1,1),(a3,b3)=(1,1)</td>
 <td style="text-align:center">3497.07</td>
 <td style="text-align:center">39.021</td>
 </tr>
 <tr>
-<td>$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
+<td>(a1,b1)=(601,401),(a2,b2)=(401,601),(a3,b3)=(2,3)</td>
 <td style="text-align:center">3499.62</td>
 <td style="text-align:center">23.788</td>
 </tr>
@@ -16392,12 +16361,12 @@ jp-needs-light-background
 </thead>
 <tbody>
 <tr>
-<td>$(\alpha_1,\beta_1)=(1001,1),(\alpha_2,\beta_2)=(505,505),(\alpha_3,\beta_3)=(1,1001)$</td>
+<td>(a1,b1)=(1001,1),(a2,b2)=(505,505),(a3,b3)=(1,1001)</td>
 <td style="text-align:center">3501.8</td>
 <td style="text-align:center">20.565</td>
 </tr>
 <tr>
-<td>$(\alpha_1,\beta_1)=(801,201),(\alpha_2,\beta_2)=(201,801),(\alpha_3,\beta_3)=(201,501)$</td>
+<td>(a1,b1)=(801,201),(a2,b2)=(201,801),(a3,b3)=(201,501)</td>
 <td style="text-align:center">3502.31</td>
 <td style="text-align:center">17.802</td>
 </tr>
@@ -17349,12 +17318,12 @@ jp-needs-light-background
 </thead>
 <tbody>
 <tr>
-<td>$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
+<td>(a1,b1)=(1,1),(a2,b2)=(1,1),(a3,b3)=(1,1)</td>
 <td style="text-align:center">3491.235</td>
 <td style="text-align:center">43.403</td>
 </tr>
 <tr>
-<td>$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
+<td>(a1,b1)=(601,401),(a2,b2)=(401,601),(a3,b3)=(2,3)</td>
 <td style="text-align:center">3489.97</td>
 <td style="text-align:center">28.221</td>
 </tr>
@@ -17369,22 +17338,22 @@ jp-needs-light-background
 </thead>
 <tbody>
 <tr>
-<td>$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
+<td>(a1,b1)=(1,1),(a2,b2)=(1,1),(a3,b3)=(1,1)$</td>
 <td style="text-align:center">3498.44</td>
 <td style="text-align:center">40.014</td>
 </tr>
 <tr>
-<td>$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
+<td>(a1,b1)=(601,401),(a2,b2)=(401,601),(a3,b3)=(2,3)</td>
 <td style="text-align:center">3505.185</td>
 <td style="text-align:center">18.557</td>
 </tr>
 <tr>
-<td>$(\alpha_1,\beta_1)=(1001,1),(\alpha_2,\beta_2)=(505,505),(\alpha_3,\beta_3)=(1,1001)$</td>
+<td>(a1,b1)=(1001,1),(a2,b2)=(505,505),(a3,b3)=(1,1001)</td>
 <td style="text-align:center">3500.59</td>
 <td style="text-align:center">20.641</td>
 </tr>
 <tr>
-<td>$(\alpha_1,\beta_1)=(801,201),(\alpha_2,\beta_2)=(201,801),(\alpha_3,\beta_3)=(201,501)$</td>
+<td>(a1,b1)=(801,201),(a2,b2)=(201,801),(a3,b3)=(201,501)</td>
 <td style="text-align:center">3500.82</td>
 <td style="text-align:center">18.183</td>
 </tr>
