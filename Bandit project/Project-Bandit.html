@@ -14579,6 +14579,37 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<table>
+<thead><tr>
+<th>$\alpha,\beta$ setting</th>
+<th style="text-align:center">Reward</th>
+<th style="text-align:center">Regret</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
+<td style="text-align:center">3491.235</td>
+<td style="text-align:center">43.403</td>
+</tr>
+<tr>
+<td>$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
+<td style="text-align:center">3489.97</td>
+<td style="text-align:center">28.221</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Project:-Performance-Evaluation-of-Bandit-Algorithms">Project: Performance Evaluation of Bandit Algorithms<a class="anchor-link" href="#Project:-Performance-Evaluation-of-Bandit-Algorithms">&#182;</a></h1><ul>
 <li>In this project, you will implement several classical bandit algorithms, evluate their performance via numerical comparison and finally gain inspiring intuition.</li>
 </ul>
@@ -16332,19 +16363,19 @@ jp-needs-light-background
 <h2 id="3.-the-Thompson-Sampling-algorithm">3. the Thompson Sampling algorithm<a class="anchor-link" href="#3.-the-Thompson-Sampling-algorithm">&#182;</a></h2><h3><1> the original</h3>
 <table>
 <thead><tr>
-<th style="text-align:center">$\alpha,\beta$ setting</th>
+<th>$\alpha,\beta$ setting</th>
 <th style="text-align:center">Reward</th>
 <th style="text-align:center">Regret</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
+<td>$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
 <td style="text-align:center">3497.07</td>
 <td style="text-align:center">39.021</td>
 </tr>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
+<td>$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
 <td style="text-align:center">3499.62</td>
 <td style="text-align:center">23.788</td>
 </tr>
@@ -16354,19 +16385,19 @@ jp-needs-light-background
 <p>If we set the prior settings of $\alpha,\beta$, we could find that the</p>
 <table>
 <thead><tr>
-<th style="text-align:center">$\alpha,\beta$ setting</th>
+<th>$\alpha,\beta$ setting</th>
 <th style="text-align:center">Reward</th>
 <th style="text-align:center">Regret</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(1001,1),(\alpha_2,\beta_2)=(505,505),(\alpha_3,\beta_3)=(1,1001)$</td>
+<td>$(\alpha_1,\beta_1)=(1001,1),(\alpha_2,\beta_2)=(505,505),(\alpha_3,\beta_3)=(1,1001)$</td>
 <td style="text-align:center">3501.8</td>
 <td style="text-align:center">20.565</td>
 </tr>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(801,201),(\alpha_2,\beta_2)=(201,801),(\alpha_3,\beta_3)=(201,501)$</td>
+<td>$(\alpha_1,\beta_1)=(801,201),(\alpha_2,\beta_2)=(201,801),(\alpha_3,\beta_3)=(201,501)$</td>
 <td style="text-align:center">3502.31</td>
 <td style="text-align:center">17.802</td>
 </tr>
@@ -16393,7 +16424,7 @@ And let $t$ be the turn, we can take $\delta = \dfrac{1}{t}$.</p>
 <p>So we can get the exploration part of the UCB algorithm:
 $$\sqrt{\dfrac{2log(t)}{count(i)}}$$
 And we can give it a parameter $c$ to control the degree of exploration.</p>
-<p>So the formula $$I(t) = \argmax\limits_{j\in\{1,2,3\}}(\hat{\theta}_j+c\cdot \sqrt{\dfrac{2log(t)}{count(j)}})$$
+<p>So the formula $$I(t) = \arg \max\limits_{j\in\{1,2,3\}}(\hat{\theta}_j+c\cdot \sqrt{\dfrac{2log(t)}{count(j)}})$$
 Where the part $\hat{\theta}_j$ is for exploitation, and the part $c\cdot \sqrt{\dfrac{2log(t)}{count(j)}}$ is for exploration.</p>
 <p>As the turn $t$ increase, the belief of the confidence increase, as it goes, the prediction gets more accurate.</p>
 <p>As for $c$, it is the parameter the decribe the degree of exploration. As $c$ increase, It turns to be more likely to explore. Correspondingly, as $c$ decrease, it more likely to exploitation.</p>
@@ -17311,19 +17342,19 @@ jp-needs-light-background
 </table>
 <h4 id="3.-Thompson-Sampling-algorithm">3. Thompson Sampling algorithm<a class="anchor-link" href="#3.-Thompson-Sampling-algorithm">&#182;</a></h4><table>
 <thead><tr>
-<th style="text-align:center">$\alpha,\beta$ setting</th>
+<th>$\alpha,\beta$ setting</th>
 <th style="text-align:center">Reward</th>
 <th style="text-align:center">Regret</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
+<td>$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
 <td style="text-align:center">3491.235</td>
 <td style="text-align:center">43.403</td>
 </tr>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
+<td>$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
 <td style="text-align:center">3489.97</td>
 <td style="text-align:center">28.221</td>
 </tr>
@@ -17331,29 +17362,29 @@ jp-needs-light-background
 </table>
 <h4 id="4.-Our-algorithm">4. Our algorithm<a class="anchor-link" href="#4.-Our-algorithm">&#182;</a></h4><table>
 <thead><tr>
-<th style="text-align:center">$\alpha,\beta$ setting</th>
+<th>$\alpha,\beta$ setting</th>
 <th style="text-align:center">Reward</th>
 <th style="text-align:center">Regret</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
+<td>$(\alpha_1,\beta_1)=(1,1),(\alpha_2,\beta_2)=(1,1),(\alpha_3,\beta_3)=(1,1)$</td>
 <td style="text-align:center">3498.44</td>
 <td style="text-align:center">40.014</td>
 </tr>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
+<td>$(\alpha_1,\beta_1)=(601,401),(\alpha_2,\beta_2)=(401,601),(\alpha_3,\beta_3)=(2,3)$</td>
 <td style="text-align:center">3505.185</td>
 <td style="text-align:center">18.557</td>
 </tr>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(1001,1),(\alpha_2,\beta_2)=(505,505),(\alpha_3,\beta_3)=(1,1001)$</td>
+<td>$(\alpha_1,\beta_1)=(1001,1),(\alpha_2,\beta_2)=(505,505),(\alpha_3,\beta_3)=(1,1001)$</td>
 <td style="text-align:center">3500.59</td>
 <td style="text-align:center">20.641</td>
 </tr>
 <tr>
-<td style="text-align:center">$(\alpha_1,\beta_1)=(801,201),(\alpha_2,\beta_2)=(201,801),(\alpha_3,\beta_3)=(201,501)$</td>
+<td>$(\alpha_1,\beta_1)=(801,201),(\alpha_2,\beta_2)=(201,801),(\alpha_3,\beta_3)=(201,501)$</td>
 <td style="text-align:center">3500.82</td>
 <td style="text-align:center">18.183</td>
 </tr>
@@ -18091,20 +18122,68 @@ initial status:  &lt;  gamma =  0.9  reward =  7.017004905451993
 <p>When the pulling turn is more than $50$ times, we choose the arm with the bigger expection.</p>
 <p>Otherwise, we can firstly calculate the $R_1,R_2$ of each arm, then choose the arm with the bigger $R_i$.</p>
 <p>With similar settings with problem1 i part II, we can get the optimal result using the optimal policy.</p>
-<p>The optimal table:
-| initial status, $\gamma$|   0.3    |   0.6   |    0.9   |
-|:-----------------------:|:--------:|:-------:|:--------:|
-|             &gt;           |  0.956   |  1.696  |  7.017   | 
-|             =           |  0.751   |  1.393  |  6.069   |
-|             &lt;           |  0.956   |  1.696  |  7.017   |</p>
+<p>The optimal table:</p>
+<table>
+<thead><tr>
+<th style="text-align:center">initial status, $\gamma$</th>
+<th style="text-align:center">0.3</th>
+<th style="text-align:center">0.6</th>
+<th style="text-align:center">0.9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">0.956</td>
+<td style="text-align:center">1.696</td>
+<td style="text-align:center">7.017</td>
+</tr>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">0.751</td>
+<td style="text-align:center">1.393</td>
+<td style="text-align:center">6.069</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">0.956</td>
+<td style="text-align:center">1.696</td>
+<td style="text-align:center">7.017</td>
+</tr>
+</tbody>
+</table>
 <p>To compare with the result in problem1, we can take the table in Problem1 in PartII.</p>
 <p>That table is as follows:</p>
-<p>The origin table:
-| initial status, $\gamma$|   0.3    |   0.6   |    0.9   |
-|:-----------------------:|:--------:|:-------:|:--------:|
-|             &gt;           |  0.949   |  1.578  |  6.345   | 
-|             =           |  0.694   |  1.656  |  6.343   |
-|             &lt;           |  0.894   |  1.567  |  6.372   |</p>
+<p>The origin table:</p>
+<table>
+<thead><tr>
+<th style="text-align:center">initial status, $\gamma$</th>
+<th style="text-align:center">0.3</th>
+<th style="text-align:center">0.6</th>
+<th style="text-align:center">0.9</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">&gt;</td>
+<td style="text-align:center">0.949</td>
+<td style="text-align:center">1.578</td>
+<td style="text-align:center">6.345</td>
+</tr>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">0.694</td>
+<td style="text-align:center">1.656</td>
+<td style="text-align:center">6.343</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;</td>
+<td style="text-align:center">0.894</td>
+<td style="text-align:center">1.567</td>
+<td style="text-align:center">6.372</td>
+</tr>
+</tbody>
+</table>
 <p>As comparison, we can see that the optimal policy truely improve the performance of the system.</p>
 <p>So with the above optimal policy, we could get the optimal result.</p>
 
