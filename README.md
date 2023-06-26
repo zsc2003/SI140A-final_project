@@ -1,5 +1,5 @@
 # SI140A-final_project
-ShanghaiTech SI140A Probability &amp; Statistics for EECS
+ShanghaiTech SI140A Probability &amp; Statistics for EECS, Spring 2023.
 
 
 
